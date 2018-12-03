@@ -1,5 +1,5 @@
-# Code for the 2018 AoC, day 1
-# https://adventofcode.com/2018/day/1
+# Code for the 2018 AoC, day 2
+# https://adventofcode.com/2018/day/2
 # Michael Bell
 # 12/2/2018
 from sortedcontainers import SortedList
