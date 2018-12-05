@@ -20,7 +20,10 @@ def parse_activity_log(activity_log):
     the guard ID, start time, and a list of times when the guard fell asleep/woke up.
     """
 
-    times_and_messages = sorted([get_time_and_message(al) for al in activity_log.split('\n')])
+    times_and_messages = sorted(
+        [get_time_and_message(al) for al in activity_log.split('\n')], 
+        key=lambda x: x[0]
+    )
 
     shift_logs = []
     current_log = dict()
@@ -45,6 +48,10 @@ def parse_activity_log(activity_log):
 
 
 def dict_keymax(d):
+    """
+    Given a dictionary of arbitrary keys and integer values >= 0, return the key of the max
+    item with the max value.
+    """
     max_k = -1
     max_v = -1
     for k in d:
@@ -57,7 +64,7 @@ def dict_keymax(d):
 
 def get_sleepiest_guard(shift_logs):
     """
-    Get the ID of the guard who has slept the most.
+    Get the ID of the guard who has slept the most over all shifts.
     """
 
     # Index on guard ID and tally up total time asleep over all observed shifts
