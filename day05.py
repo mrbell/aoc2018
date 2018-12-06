@@ -32,7 +32,7 @@ def reduce_polymer(polymer):
 
 def recursive_reduce_polymer(polymer):
     """
-    I think this works, but leads to a max recursion error.
+    I think this works, but leads to a max recursion error on the full data set.
     """
     for i, unit in enumerate(polymer[:-1]):
         if (
